@@ -1,4 +1,5 @@
 import 'package:care_pulse_flutter/_features/home_page.dart';
+import 'package:care_pulse_flutter/_shared/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CarePulseApp extends StatelessWidget {
@@ -7,9 +8,11 @@ class CarePulseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      title: 'CarePulse',
     );
   }
 }
