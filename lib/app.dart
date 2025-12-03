@@ -1,4 +1,5 @@
-import 'package:care_pulse_flutter/_features/home_page.dart';
+import 'package:care_pulse_flutter/_features/home/widgets/home_page.dart';
+import 'package:care_pulse_flutter/_routing/router.dart';
 import 'package:care_pulse_flutter/_shared/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,9 +8,11 @@ class CarePulseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final router = routerConfig();
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      routerConfig: router,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       title: 'CarePulse',
