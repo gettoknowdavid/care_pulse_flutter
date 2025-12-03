@@ -13,6 +13,7 @@ class CarePulseApp extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       title: 'CarePulse',
+      themeMode: ThemeMode.dark,
     );
   }
 }
