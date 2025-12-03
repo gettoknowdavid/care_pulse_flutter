@@ -20,15 +20,16 @@ environment:
   sdk: ^3.10.0
 
 dependencies:
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   google_fonts: ^6.3.3
-  cupertino_icons: ^1.0.8
+  intl: ^0.20.2
 
 dev_dependencies:
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
   very_good_analysis: ^10.0.0
 
 flutter:
