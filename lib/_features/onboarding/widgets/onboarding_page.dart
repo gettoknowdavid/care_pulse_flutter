@@ -7,6 +7,7 @@ import 'package:care_pulse_flutter/_shared/ui/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -17,6 +18,8 @@ class OnboardingPage extends StatelessWidget {
     final colors = ShadTheme.of(context).colorScheme;
     final textTheme = ShadTheme.of(context).textTheme;
 
+    final isLarge = ResponsiveBreakpoints.of(context).largerOrEqualTo(DESKTOP);
+
     return Scaffold(
       body: SizedBox(
         height: 1.sh,
@@ -26,6 +29,9 @@ class OnboardingPage extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Container(
+                  padding: !isLarge
+                      ? const EdgeInsets.symmetric(horizontal: 16).r
+                      : null,
                   constraints: const BoxConstraints.expand(width: 496).r,
                   child: Column(
                     crossAxisAlignment: .start,
@@ -39,13 +45,14 @@ class OnboardingPage extends StatelessWidget {
                         mainAxisAlignment: .spaceBetween,
                         children: [
                           Text(
-                            '© 2025 CarePulse. All rights reserved.',
+                            '© ${DateTime.now().year} CarePulse',
                             style: textTheme.small.copyWith(
                               color: colors.dark600,
                             ),
                           ),
                           ShadButton.link(
                             onPressed: () {},
+                            padding: .zero,
                             textStyle: textTheme.small,
                             foregroundColor: colors.green500,
                             child: const Text('Admin'),
@@ -57,11 +64,14 @@ class OnboardingPage extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: SizedBox(
-                height: double.infinity,
-                child: Assets.images.onboarding.image(
-                  fit: BoxFit.cover,
+            ResponsiveVisibility(
+              visible: isLarge,
+              child: Expanded(
+                child: SizedBox(
+                  height: double.infinity,
+                  child: Assets.images.onboarding.image(
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
