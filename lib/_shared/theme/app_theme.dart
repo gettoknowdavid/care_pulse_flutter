@@ -39,6 +39,7 @@ final class AppTheme {
         ),
       ),
       textTheme: textTheme,
+      destructiveToastTheme: ShadToastTheme(alignment: Alignment.topRight),
     );
   }
 }
