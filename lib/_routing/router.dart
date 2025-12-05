@@ -17,7 +17,7 @@ GoRouter routerConfig() {
         final allowed = [R.onboarding, R.loading];
         return allowed.contains(nextRoute) ? null : R.onboarding;
       case Scope.newPatient:
-        return R.register;
+        return R.patientRegistration;
       default:
         return R.loading;
     }
@@ -40,8 +40,18 @@ GoRouter routerConfig() {
         builder: (context, state) => const OnboardingPage(),
       ),
       GoRoute(
-        path: R.register,
-        builder: (context, state) => const RegisterPatientPage(),
+        path: R.patients,
+        builder: (context, state) => const PatientsPage(),
+        routes: [
+          GoRoute(
+            path: ':id',
+            builder: (context, state) => const PatientDetailsPage(),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: R.patientRegistration,
+        builder: (context, state) => const PatientRegisterPage(),
       ),
       GoRoute(
         path: R.home,

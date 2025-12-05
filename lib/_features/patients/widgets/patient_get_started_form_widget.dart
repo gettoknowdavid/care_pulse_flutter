@@ -44,7 +44,7 @@ class _PatientGetStartedFormState extends State<PatientGetStartedForm> {
       select: (PatientsManagerRemote m) => m.createPatient,
       handler: (context, session, cancel) {
         if (session == null) return;
-        context.go(R.register);
+        context.go(R.patientRegistration);
       },
     );
 
