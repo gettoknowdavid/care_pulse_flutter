@@ -156,13 +156,7 @@ class _LoginFormState extends State<LoginForm> {
           60.verticalSpace,
           PrimaryButton(
             label: 'Submit',
-            onPressed: () {
-              if (_formKey.currentState!.saveAndValidate()) {
-                log('Succeeded with ${_formKey.currentState!.value}');
-              } else {
-                log('Failed');
-              }
-            },
+            onPressed: () async {},
           ),
         ],
       ),
