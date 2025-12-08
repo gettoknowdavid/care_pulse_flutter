@@ -24,7 +24,7 @@ class _PatientGetStartedFormState extends State<PatientGetStartedForm> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  bool obscureText = false;
+  bool obscureText = true;
 
   @override
   void dispose() {

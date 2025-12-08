@@ -1,9 +1,11 @@
 export '_managers/patients_manager_remote.dart';
 export '_models/params.dart';
 export '_models/patient.dart';
+export 'widgets/onboarding_footer.dart';
 export 'widgets/onboarding_page.dart';
 export 'widgets/patient_details_page.dart';
 export 'widgets/patient_get_started_form_widget.dart';
 export 'widgets/patient_login_form_widget.dart';
-export 'widgets/patient_register_page.dart';
+export 'widgets/patient_registration/patient_register_page.dart';
+export 'widgets/patient_registration/patient_registration_form_widget.dart';
 export 'widgets/patients_page.dart';

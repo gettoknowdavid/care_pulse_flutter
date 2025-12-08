@@ -1,5 +1,4 @@
 import 'package:care_pulse_flutter/_features/patients/patients.dart';
-import 'package:care_pulse_flutter/_features/patients/widgets/patient_get_started_form_widget.dart';
 import 'package:care_pulse_flutter/_shared/theme/app_theme.dart';
 import 'package:care_pulse_flutter/_shared/ui/assets/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -71,24 +70,7 @@ class OnboardingPage extends StatelessWidget {
                         ],
                       ),
                       64.verticalSpace,
-                      Row(
-                        mainAxisAlignment: .spaceBetween,
-                        children: [
-                          Text(
-                            '© ${DateTime.now().year} CarePulse',
-                            style: textTheme.small.copyWith(
-                              color: colors.dark600,
-                            ),
-                          ),
-                          ShadButton.link(
-                            onPressed: () {},
-                            padding: .zero,
-                            textStyle: textTheme.small,
-                            foregroundColor: colors.green500,
-                            child: const Text('Admin'),
-                          ),
-                        ],
-                      ),
+                      const OnboardingFooter(),
                     ],
                   ),
                 ),
@@ -99,9 +81,7 @@ class OnboardingPage extends StatelessWidget {
               child: Expanded(
                 child: SizedBox(
                   height: double.infinity,
-                  child: Assets.images.onboarding.image(
-                    fit: BoxFit.cover,
-                  ),
+                  child: Assets.images.onboarding.image(fit: BoxFit.cover),
                 ),
               ),
             ),

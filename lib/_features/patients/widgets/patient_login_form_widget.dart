@@ -23,7 +23,7 @@ class _PatientLoginFormState extends State<PatientLoginForm> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  bool obscureText = false;
+  bool obscureText = true;
 
   @override
   void dispose() {

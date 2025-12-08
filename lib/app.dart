@@ -37,6 +37,13 @@ class CarePulseApp extends StatelessWidget {
               title: 'CarePulse',
               themeMode: ThemeMode.dark,
               theme: AppTheme.theme,
+              builder: (context, child) {
+                final behaviour = ScrollConfiguration.of(context);
+                return ScrollConfiguration(
+                  behavior: behaviour.copyWith(scrollbars: false),
+                  child: child!,
+                );
+              },
             ),
           );
         },

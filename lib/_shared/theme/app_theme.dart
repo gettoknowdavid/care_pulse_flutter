@@ -38,8 +38,27 @@ final class AppTheme {
           border: ShadBorder.all(color: ColorName.dark500),
         ),
       ),
+      selectTheme: ShadSelectTheme(
+        padding: const EdgeInsets.all(12).r,
+        decoration: ShadDecoration(
+          color: ColorName.dark400,
+          border: ShadBorder.all(color: ColorName.dark500),
+        ),
+      ),
+      popoverTheme: ShadPopoverTheme(
+        decoration: ShadDecoration(
+          color: ColorName.dark400,
+          border: ShadBorder.all(color: ColorName.dark500),
+        ),
+      ),
+      cardTheme: ShadCardTheme(
+        backgroundColor: ColorName.dark400,
+        border: ShadBorder.all(color: ColorName.dark500),
+      ),
       textTheme: textTheme,
-      destructiveToastTheme: ShadToastTheme(alignment: Alignment.topRight),
+      destructiveToastTheme: const ShadToastTheme(
+        alignment: Alignment.topRight,
+      ),
     );
   }
 }
